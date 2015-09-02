@@ -20,7 +20,8 @@ namespace ProgramingTraffic
             //            "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Script/bootstrap.js"));
+                      "~/Script/bootstrap.js",
+                      "~/Script/clean-blog.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/clean/css/clean-blog.css"));

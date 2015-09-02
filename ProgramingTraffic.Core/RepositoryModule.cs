@@ -28,7 +28,7 @@ namespace ProgramingTraffic.Core
                             c.FromConnectionStringWithKey("ProgramingTrafficDbConnString")))
                         .Cache(c => c.UseQueryCache().ProviderClass<HashtableCacheProvider>())
                         .Mappings(m => m.FluentMappings.AddFromAssemblyOf<Post>())
-                        .ExposeConfiguration(cfg => new SchemaExport(cfg).Execute(true, true, false))
+                        .ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(false, true))
                         .BuildConfiguration()
                         .BuildSessionFactory()
                 )

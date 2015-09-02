@@ -28,7 +28,7 @@ namespace ProgramingTraffic.Controllers
             // pick latest 10 posts
             var viewModel = new ListViewModel(_blogRepository, p);
 
-            ViewBag.Title = "Latest Posts";
+            ViewBag.Title = "Programing Traffic";
 
             return View("List", viewModel);
         }

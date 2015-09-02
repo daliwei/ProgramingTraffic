@@ -15,7 +15,7 @@ namespace ProgramingTraffic.Models
 
         public ListViewModel(IBlogRepository _blogRepository, int p)
         {
-            Posts = _blogRepository.Posts(p - 1, 10);
+            Posts = _blogRepository.Posts(p - 1, 5);
             TotalPosts = _blogRepository.TotalPosts();
         }
     }
