@@ -25,9 +25,9 @@ namespace ProgramingTraffic.Core.Mappings
             Map(x => x.Description)
             .Length(200);
 
-            HasManyToMany(x => x.Posts)
-            .Cascade.All().Inverse()
-            .Table("PostTagMap");
+            //HasManyToMany(x => x.Posts)
+            //.Cascade.All().Inverse()
+            //.Table("PostTagMap");
         }
     }
 }

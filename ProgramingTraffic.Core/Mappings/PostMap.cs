@@ -46,8 +46,8 @@ namespace ProgramingTraffic.Core.Mappings
             .Column("Category")
             .Not.Nullable();
 
-            HasManyToMany(x => x.Tags)
-            .Table("PostTagMap");
+            //HasManyToMany(x => x.Tags)
+            //.Table("PostTagMap");
         }
     }
 }

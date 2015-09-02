@@ -62,9 +62,11 @@
   <ItemGroup>
     <Compile Include="BlogRepository.cs" />
     <Compile Include="IBlogRepository.cs" />
+    <Compile Include="Mappings\PostTagMapMap.cs" />
     <Compile Include="Mappings\CategoryMap.cs" />
     <Compile Include="Mappings\PostMap.cs" />
     <Compile Include="Mappings\TagMap.cs" />
+    <Compile Include="Objects\PostTagMap.cs" />
     <Compile Include="Objects\Category.cs" />
     <Compile Include="Objects\Post.cs" />
     <Compile Include="Objects\Tag.cs" />

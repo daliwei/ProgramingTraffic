@@ -34,7 +34,7 @@ namespace ProgramingTraffic.Core
             return _session.Query<Post>()
                   .Where(p => postIds.Contains(p.Id))
                   .OrderByDescending(p => p.PostedOn)
-                  .FetchMany(p => p.Tags)
+                  //.FetchMany(p => p.Tags)
                   .ToList();
         }
 
