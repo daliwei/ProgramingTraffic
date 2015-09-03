@@ -42,7 +42,10 @@ namespace ProgramingTraffic.Controllers
             jsonModel.NoMoreData = page >= viewModel.totalPages;
             jsonModel.HTMLString = RenderPartialViewToString("List", viewModel);
 
-            return Json(jsonModel);
+            if (HttpContext.Request.HttpMethod == "get")
+                return Json(jsonModel, JsonRequestBehavior.AllowGet);
+            else
+                return Json(jsonModel);
             //return PartialView("List_Partial", viewModel);
         }
 

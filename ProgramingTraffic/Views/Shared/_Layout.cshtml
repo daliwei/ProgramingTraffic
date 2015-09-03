@@ -144,7 +144,8 @@
        if ($(window).scrollTop() == $(document).height() - $(window).height() && !NoMoreData && !inProgress) {
            inProgress = true;
            $("#loadingRow").show();
-           $.post("@Url.Action("InfinateScroll", "Blog")", { "page": BlockNumber },
+           $.post("@Url.Action("InfinateScroll", "Blog")",
+               { "page": BlockNumber },
                    function (data) {
                        BlockNumber = BlockNumber + 1;
                        NoMoreData = data.NoMoreData;
@@ -152,6 +153,27 @@
                        $("#site_content").append(data.HTMLString);
                        inProgress = false;
                    });
+
+           @*var baseurl = "@Url.Action("InfinateScroll", "Blog")";
+           var query = baseurl + "?page=" + BlockNumber+"&pag2=2";
+           console.log(query);
+           $.ajax(
+               {
+                   type: "GET",
+                   url: query,
+                   error: function (XMLHttpRequest, textStatus, errorThrown) {
+                       alert("Request: " + XMLHttpRequest.toString() + "\n\nStatus: " + textStatus + "\n\nError: " + errorThrown);
+                   },
+                   success: function (data) {
+                       console.log(data);
+                       BlockNumber = BlockNumber + 1;
+                       NoMoreData = data.NoMoreData;
+                       $("#loadingRow").hide();
+                       $("#site_content").append(data.HTMLString);
+                       inProgress = false;
+                   }
+               }
+           )*@
        }
    });
     </script>
