@@ -144,6 +144,7 @@
     <Content Include="Content\clean\img\about-bg.jpg" />
     <Content Include="Content\clean\img\contact-bg.jpg" />
     <Content Include="Content\clean\img\home-bg.jpg" />
+    <Content Include="Content\clean\img\load.gif" />
     <Content Include="Content\clean\img\post-bg.jpg" />
     <Content Include="Content\clean\img\post-sample-image.jpg" />
     <Content Include="Content\clean\index.html" />
@@ -193,6 +194,7 @@
     <Content Include="Content\clean\LICENSE" />
     <Content Include="Content\clean\README.md" />
     <None Include="Properties\PublishProfiles\programingtraffic.pubxml" />
+    <Content Include="Views\Blog\_PartialList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

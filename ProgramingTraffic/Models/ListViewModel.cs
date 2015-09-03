@@ -13,10 +13,24 @@ namespace ProgramingTraffic.Models
 
         public int TotalPosts { get; set; }
 
-        public ListViewModel(IBlogRepository _blogRepository, int p)
+        public int currentPage { get; set; }
+
+        public int totalPages { get; set; }
+
+        private int split = 5;
+
+        public ListViewModel(IBlogRepository _blogRepository, int page)
         {
-            Posts = _blogRepository.Posts(p - 1, 5);
+            currentPage = page;
+            Posts = _blogRepository.Posts(page - 1, split);
             TotalPosts = _blogRepository.TotalPosts();
+            totalPages = (int)Math.Ceiling((double)TotalPosts / (double)split);
         }
+    }
+
+    public class JsonModel_ListView
+    {
+        public string HTMLString { get; set; }
+        public bool NoMoreData { get; set; }
     }
 }
