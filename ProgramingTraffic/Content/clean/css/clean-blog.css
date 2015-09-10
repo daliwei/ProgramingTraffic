@@ -76,6 +76,15 @@ hr.small {
   .navbar-custom .navbar-brand:focus {
     color: rgba(255, 255, 255, 0.8);
   }
+  .navbar-custom:active{
+    background:transparent;
+  }
+  .navbar-brand:active{
+    background:white;
+  }
+  .navbar-custom .navbar-brand:focus {
+    color: rgba(255, 255, 255, 0.8);
+  }
   .navbar-custom .nav li a {
     color: white;
     padding: 20px;
