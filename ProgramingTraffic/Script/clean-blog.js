@@ -1013,7 +1013,17 @@ jQuery(document).ready(function($) {
             },
             function() {
                 var currentTop = $(window).scrollTop();
+                console.log(currentTop);
                 //check if user is scrolling up
+                if (currentTop > 510) {
+                    $('.panel-category').css("position", 'fixed');
+                    $('.panel-category').css("top", '80px');
+                    console.log('record');
+                }
+                else {
+                    $('.panel-category').css("position", 'absolute');
+                    $('.panel-category').css("top", '0px');
+                }
                 if (currentTop < this.previousTop) {
                     //if scrolling up...
                     if (currentTop > 0 && $('.navbar-custom').hasClass('is-fixed')) {

@@ -26,7 +26,7 @@ namespace ProgramingTraffic
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/clean/css/clean-blog.css"));
 
-            BundleTable.EnableOptimizations = true;
+            //BundleTable.EnableOptimizations = true;
         }
     }
 }

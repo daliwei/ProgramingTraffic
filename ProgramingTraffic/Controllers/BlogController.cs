@@ -40,7 +40,7 @@ namespace ProgramingTraffic.Controllers
             var viewModel = new ListViewModel(_blogRepository, page);
             JsonModel_ListView jsonModel = new JsonModel_ListView();
             jsonModel.NoMoreData = page >= viewModel.totalPages;
-            jsonModel.HTMLString = RenderPartialViewToString("List", viewModel);
+            jsonModel.HTMLString = RenderPartialViewToString("_PartialList", viewModel.Posts);
 
             if (HttpContext.Request.HttpMethod == "get")
                 return Json(jsonModel, JsonRequestBehavior.AllowGet);

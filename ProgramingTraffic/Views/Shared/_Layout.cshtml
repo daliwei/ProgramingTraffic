@@ -56,14 +56,13 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>@Html.ActionLink("Posts", "Posts")</li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category
-                            <span class="caret"></span></a>
+                        @*<li class="dropdown">
+                            <a id="dropdown-id" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category</a>
                             <ul class="dropdown-menu">
                                 <li>@Html.ActionLink("Contact", "Contact")</li>
                                 <li>@Html.ActionLink("About Me", "AboutMe")</li>
                             </ul>
-                        </li>
+                        </li>*@
                         <li>@Html.ActionLink("Contact", "Contact")</li>
                         <li>@Html.ActionLink("About Me", "AboutMe")</li>
                     </ul>
@@ -94,13 +93,17 @@
 
         <!-- Site Content -->
         <div id="site_content">
-            @RenderBody()
-            <div class="row" id="loadingRow" visibility="none">
-                <div class="col-xs-3 col-xs-offset-5">
-                     <img src="~/Content/clean/img/load.gif" /> Loading ...
+            <div class="row" z-index="1000">
+                <div class="col-xs-4 col-xs-offset-8">
+                    <div class="panel panel-default panel-category">
+                        <div class="panel-heading"><strong>Category</strong> </div>
+                        <div class="panel-body">Look, I'm in a panel!</div>
+                    </div>
                 </div>
             </div>
+            @RenderBody()
         </div>
+
                 <!-- Footer -->
                 @*<div id="footer">
                 Copyright © @DateTime.Now.Year All Rights Reserved.
