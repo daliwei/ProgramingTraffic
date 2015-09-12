@@ -42,5 +42,12 @@ namespace ProgramingTraffic.Core
         {
             return _session.Query<Post>().Where(p => p.Published).Count();
         }
+
+        public IList<Category> Categories()
+        {
+            var categories = _session.Query<Category>().ToList();
+            return categories;
+
+        }
     }
 }

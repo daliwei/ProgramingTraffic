@@ -11,5 +11,6 @@ namespace ProgramingTraffic.Core
     {
         IList<Post> Posts(int pageNo, int pageSize);
         int TotalPosts();
+        IList<Category> Categories();
     }
 }

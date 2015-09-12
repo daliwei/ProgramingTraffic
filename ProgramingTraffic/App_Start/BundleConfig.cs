@@ -21,7 +21,8 @@ namespace ProgramingTraffic
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Script/bootstrap.js",
-                      "~/Script/clean-blog.js"));
+                      "~/Script/clean-blog.js",
+                      "~/Script/main.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/clean/css/clean-blog.css"));

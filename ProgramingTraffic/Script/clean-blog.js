@@ -988,7 +988,9 @@ $('#name').focus(function() {
     $(":input").not("[type=image],[type=submit]").jqBootstrapValidation.apply(this,arguments);
   };
 
-})( jQuery );
+})(jQuery);
+
+
 
 // Floating label headings for the contact form
 $(function() {
@@ -1004,7 +1006,6 @@ $(function() {
 // Navigation Scripts to Show Header on Scroll-Up
 jQuery(document).ready(function($) {
     var MQL = 1170;
-
     //primary navigation slide-in effect
     if ($(window).width() > MQL) {
         var headerHeight = $('.navbar-custom').height();
@@ -1013,17 +1014,6 @@ jQuery(document).ready(function($) {
             },
             function() {
                 var currentTop = $(window).scrollTop();
-                console.log(currentTop);
-                //check if user is scrolling up
-                if (currentTop > 510) {
-                    $('.panel-category').css("position", 'fixed');
-                    $('.panel-category').css("top", '80px');
-                    console.log('record');
-                }
-                else {
-                    $('.panel-category').css("position", 'absolute');
-                    $('.panel-category').css("top", '0px');
-                }
                 if (currentTop < this.previousTop) {
                     //if scrolling up...
                     if (currentTop > 0 && $('.navbar-custom').hasClass('is-fixed')) {
@@ -1037,6 +1027,7 @@ jQuery(document).ready(function($) {
                     if (currentTop > headerHeight && !$('.navbar-custom').hasClass('is-fixed')) $('.navbar-custom').addClass('is-fixed');
                 }
                 this.previousTop = currentTop;
+                SetPanel();
             });
     }
 });

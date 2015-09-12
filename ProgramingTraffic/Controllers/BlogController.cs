@@ -42,7 +42,7 @@ namespace ProgramingTraffic.Controllers
             jsonModel.NoMoreData = page >= viewModel.totalPages;
             jsonModel.HTMLString = RenderPartialViewToString("_PartialList", viewModel.Posts);
 
-            if (HttpContext.Request.HttpMethod == "get")
+            if (HttpContext.Request.HttpMethod == "GET")
                 return Json(jsonModel, JsonRequestBehavior.AllowGet);
             else
                 return Json(jsonModel);
@@ -64,6 +64,16 @@ namespace ProgramingTraffic.Controllers
 
                 return sw.GetStringBuilder().ToString();
             }
+        }
+
+        public ActionResult Category()
+        {
+            //pick up the categories from database
+            var categoryModel = new CategoryViewModel(_blogRepository);
+            if (HttpContext.Request.HttpMethod == "GET")
+                return Json(categoryModel.Categories, JsonRequestBehavior.AllowGet);
+            else
+                return Json(categoryModel.Categories);
         }
     }
 }

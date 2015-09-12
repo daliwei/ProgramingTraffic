@@ -20,7 +20,6 @@ namespace ProgramingTraffic.Core.Objects
         public virtual string Description
         { get; set; }
 
-        public virtual IList<Post> Posts
-        { get; set; }
+        public virtual IList<Post> Posts { get; set; }
     }
 }

@@ -156,6 +156,7 @@
     <Content Include="Script\bootstrap.js" />
     <Content Include="Script\bootstrap.min.js" />
     <Content Include="Script\jquery.min.js" />
+    <Content Include="Script\main.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -169,6 +170,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoryViewModel.cs" />
     <Compile Include="Models\ListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
