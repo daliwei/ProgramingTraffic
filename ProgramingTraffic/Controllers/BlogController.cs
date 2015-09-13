@@ -14,6 +14,7 @@ namespace ProgramingTraffic.Controllers
     {
         private readonly IBlogRepository _blogRepository;
 
+
         public BlogController(IBlogRepository blogRepository)
         {
             _blogRepository = blogRepository;

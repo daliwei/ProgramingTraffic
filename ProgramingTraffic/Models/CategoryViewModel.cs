@@ -16,7 +16,12 @@ namespace ProgramingTraffic.Models
         {
             this.Categories = _blogRepository.Categories();
         }
-        
+
+        public CategoryViewModel(BlogContext _blogContext)
+        {
+            this.Categories = _blogContext.AllCategories();
+        }
+
     }
 
     public class JsonModel_CategoryView

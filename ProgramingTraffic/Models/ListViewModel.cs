@@ -35,6 +35,14 @@ namespace ProgramingTraffic.Models
             TotalPosts = _blogRepository.TotalCatePosts(category_name);
             totalPages = (int)Math.Ceiling((double)TotalPosts / (double)split);
         }
+
+        public ListViewModel(BlogContext _blogContext, int page)
+        {
+            currentPage = page;
+            Posts = _blogContext.AllPostsByPage(page - 1, split);
+            //TotalPosts = _blogContext.TotalPosts();
+            //totalPages = (int)Math.Ceiling((double)TotalPosts / (double)split);
+        }
     }
 
     public class JsonModel_ListView

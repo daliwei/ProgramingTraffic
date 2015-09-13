@@ -1,0 +1,88 @@
+﻿@model ProgramingTraffic.Models.ListViewModel
+
+@Html.Partial("_PList", Model);
+@*<div id="content" class="container">
+    <div class="row">
+        <div id="POSTS" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            @if (Model.Posts.Count > 0)
+            {
+                @Html.Partial("_PartialList", Model.Posts);
+            }
+        </div>
+    </div>
+    <div class="row" id="loadingRow" visibility="none">
+        <div class="col-xs-3 col-xs-offset-5">
+            <img src="~/Content/clean/img/load.gif" /> Loading ...
+        </div>
+    </div>
+</div>*@
+
+        @*<div id="content">
+
+            <h1>@ViewBag.Title</h1>
+
+            @Html.Partial("_Pager", Model)
+
+            @if (Model.Posts.Count > 0)
+            {
+                foreach (var post in Model.Posts)
+                {
+                    @Html.Partial("_PostTemplate", post)
+                }
+            }
+            else
+            {
+                <p>No posts found!</p>
+            }
+
+        </div>*@
+
+<script type="text/javascript">
+   var BlockNumber = 2;  //Infinate Scroll starts from second block
+   var NoMoreData = false;
+   var inProgress = false;
+
+   $(document).ready(function () {
+       $("#loadingRow").hide();
+   });
+
+   $(window).scroll(function () {
+       if ($(window).scrollTop() == $(document).height() - $(window).height() && !NoMoreData && !inProgress) {
+           inProgress = true;
+           $("#loadingRow").show();
+           $.post("@Url.Action("InfinateScroll", "Blog")",
+               { "page": BlockNumber },
+                   function (data) {
+                       BlockNumber = BlockNumber + 1;
+                       NoMoreData = data.NoMoreData;
+                       $("#loadingRow").hide();
+                       $("#POSTS").append(data.HTMLString);
+                       inProgress = false;
+                   });
+
+           @*var baseurl = "@Url.Action("InfinateScroll", "Blog")";
+           var query = baseurl + "?page=" + BlockNumber+"&pag2=2";
+           console.log(query);
+           $.ajax(
+               {
+                   type: "GET",
+                   url: query,
+                   error: function (XMLHttpRequest, textStatus, errorThrown) {
+                       alert("Request: " + XMLHttpRequest.toString() + "\n\nStatus: " + textStatus + "\n\nError: " + errorThrown);
+                   },
+                   success: function (data) {
+                       console.log(data);
+                       BlockNumber = BlockNumber + 1;
+                       NoMoreData = data.NoMoreData;
+                       $("#loadingRow").hide();
+                       $("#site_content").append(data.HTMLString);
+                       inProgress = false;
+                   }
+               }
+           )*@
+       }
+   });
+</script>
+
+
+

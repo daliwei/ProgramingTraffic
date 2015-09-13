@@ -26,7 +26,7 @@
 }
 
 
-var url = "/Blog/Category";
+var url = "/BlogEF/Category";
 //set category and tag panels
 function loadcategorytags() {
     $.post(url,
