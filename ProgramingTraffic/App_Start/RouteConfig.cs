@@ -13,6 +13,12 @@ namespace ProgramingTraffic
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //routes.MapRoute(
+            //    "Category",
+            //    "{controller}/{action}/{category}",
+            //    new { controller = "Blog", action = "Posts", category = "" }
+            //);
+
             routes.MapRoute(
                 "Home",
                 "{controller}/{action}/{id}",

@@ -1,40 +1,6 @@
 ﻿@model ProgramingTraffic.Models.ListViewModel
 
-<div id="content" class="container">
-    <div class="row">
-        <div id="POSTS" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            @if (Model.Posts.Count > 0)
-            {
-                @Html.Partial("_PartialList", Model.Posts);
-            }
-        </div>
-    </div>
-    <div class="row" id="loadingRow" visibility="none">
-        <div class="col-xs-3 col-xs-offset-5">
-            <img src="~/Content/clean/img/load.gif" /> Loading ...
-        </div>
-    </div>
-</div>
-
-        @*<div id="content">
-
-            <h1>@ViewBag.Title</h1>
-
-            @Html.Partial("_Pager", Model)
-
-            @if (Model.Posts.Count > 0)
-            {
-                foreach (var post in Model.Posts)
-                {
-                    @Html.Partial("_PostTemplate", post)
-                }
-            }
-            else
-            {
-                <p>No posts found!</p>
-            }
-
-        </div>*@
+@Html.Partial("_PList", Model);
 
 <script type="text/javascript">
    var BlockNumber = 2;  //Infinate Scroll starts from second block

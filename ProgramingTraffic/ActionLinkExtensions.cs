@@ -28,7 +28,7 @@ namespace ProgramingTraffic
         public static MvcHtmlString CategoryLink(this HtmlHelper helper,
             Category category)
         {
-            return helper.ActionLink(category.Name, "Category", "Blog",
+            return helper.ActionLink(category.Name, "CategoryPosts", "Blog",
                 new
                 {
                     category = category.UrlSlug

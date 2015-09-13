@@ -26,6 +26,15 @@ namespace ProgramingTraffic.Models
             TotalPosts = _blogRepository.TotalPosts();
             totalPages = (int)Math.Ceiling((double)TotalPosts / (double)split);
         }
+
+
+        public ListViewModel(IBlogRepository _blogRepository, int page, string category_name)
+        {
+            currentPage = page;
+            Posts = _blogRepository.Posts_Category(page - 1, split, category_name);
+            TotalPosts = _blogRepository.TotalCatePosts(category_name);
+            totalPages = (int)Math.Ceiling((double)TotalPosts / (double)split);
+        }
     }
 
     public class JsonModel_ListView

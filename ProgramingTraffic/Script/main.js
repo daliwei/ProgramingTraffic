@@ -26,7 +26,7 @@
 }
 
 
-var url = "Blog/Category";
+var url = "/Blog/Category";
 //set category and tag panels
 function loadcategorytags() {
     $.post(url,
@@ -35,8 +35,7 @@ function loadcategorytags() {
         {
             for (i in data)
             {
-                $("#panel-cate-id").append(data[i].Name+',');
-                console.log(data[i].Name);
+                $("#panel-cate-id").append(data[i].element);
             }
 
             SetPanel();

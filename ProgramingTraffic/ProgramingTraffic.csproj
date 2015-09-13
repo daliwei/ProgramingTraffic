@@ -181,7 +181,7 @@
     <Content Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Blog\List.cshtml" />
+    <Content Include="Views\Blog\FullList.cshtml" />
     <Content Include="Views\Blog\_PostTemplate.cshtml" />
     <Content Include="App_Code\Helpers.cshtml" />
     <Content Include="Views\Shared\_Pager.cshtml" />
@@ -197,6 +197,9 @@
     <Content Include="Content\clean\README.md" />
     <None Include="Properties\PublishProfiles\programingtraffic.pubxml" />
     <Content Include="Views\Blog\_PartialList.cshtml" />
+    <Content Include="Views\Blog\_PartialCategoryView.cshtml" />
+    <Content Include="Views\Blog\_PList.cshtml" />
+    <Content Include="Views\Blog\CategoryList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
